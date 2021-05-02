@@ -15,16 +15,18 @@ cd superset-heroku-docker
 
 ## Create Heroku App
 
-Create a heroku application with [https://devcenter.heroku.com/articles/build-docker-images-heroku-yml#creating-your-app-from-setup](`heroku.yml` manifest support).
+Create a heroku application with [`heroku.yml` manifest support](https://devcenter.heroku.com/articles/build-docker-images-heroku-yml#creating-your-app-from-setup).
 
 ```sh
 heroku update beta
 heroku plugins:install @heroku-cli/plugin-manifest
 heroku create YOUR_APP_NAME --manifest
-git push heroku master
+git push heroku main
 ```
 
 ## Initialize Superset
+
+Run Superset initialization steps including load example data if desired.
 
 ```sh
 # start up a shell session
