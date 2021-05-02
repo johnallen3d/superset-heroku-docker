@@ -22,6 +22,7 @@ heroku update beta
 heroku plugins:install @heroku-cli/plugin-manifest
 heroku create YOUR_APP_NAME --manifest
 git push heroku main
+heroku config:set SECRET_KEY=$(openssl rand -hex 12)
 ```
 
 ## Initialize Superset
@@ -30,7 +31,7 @@ Run Superset initialization steps including load example data if desired.
 
 ```sh
 # start up a shell session
-heroku run bash --app YOUR_APP_NAME
+heroku run bash
 
 # create an admin user
 superset fab create-admin \
